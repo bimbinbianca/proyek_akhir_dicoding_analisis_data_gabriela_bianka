@@ -5,10 +5,10 @@ import streamlit as st
 #from babel.numbers import format_currency
 sns.set(style='dark')
 
-most_product_sales_df = pd.read_csv("data_pembelian.csv")
-most_customers_df = pd.read_csv("data_pelanggan.csv")
-data_orders_df = pd.read_csv("data_pengiriman.csv")
-data_sales_df = pd.read_csv("data_penjualan.csv")
+most_product_sales_df = pd.read_csv("dashboard/data_pembelian.csv")
+most_customers_df = pd.read_csv("dashboard/data_pelanggan.csv")
+data_orders_df = pd.read_csv("dashboard/data_pengiriman.csv")
+data_sales_df = pd.read_csv("dashboard/data_penjualan.csv")
 
 def create_most_product_sales_df(df):
     most_sales_df = df.groupby("product_category_name").order_id.nunique().sort_values(ascending=False).reset_index()
